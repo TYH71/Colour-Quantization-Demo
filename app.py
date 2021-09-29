@@ -29,6 +29,8 @@ if buffer_file is not None:
         batch_size=3072
     ).fit((img_data/255.0).reshape(-1, 3))
 
+    st.write("Received Image. Generating Compressed Image")
+
     k_colors = km.cluster_centers_[km.labels_]
     k_img = img_as_ubyte(np.reshape(k_colors,(img_data.shape)))
 
