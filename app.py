@@ -71,7 +71,7 @@ if buffer_file is not None:
     centroids=km.cluster_centers_)
     colourspace.pyplot(y.colorSpace())
 
-    st.success('Python Code Finished Running')
-
 else:
     st.markdown(">No Image Uploaded")
+
+st.success('Python Code Finished Running')
