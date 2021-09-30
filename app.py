@@ -13,6 +13,7 @@ Conduct Colour-Based Segmentation of an Image based on the chromaticity plane le
 
 # sidebar
 st.sidebar.title("Colour Quantization")
+st.sidebar.info("Control the number of distinct colours for Quantization.")
 cluster_parameters = st.sidebar.slider('Number of Clusters', 4, 256, 64)
 
 
