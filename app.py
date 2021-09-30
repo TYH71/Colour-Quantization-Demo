@@ -4,7 +4,8 @@ from skimage import io, color, img_as_ubyte
 from PIL import Image
 from sklearn.cluster import MiniBatchKMeans
 
-# 
+@st.cache  # 👈 Added this
+# Header
 st.title("Colour Quantization")
 st.info(
 '''
@@ -27,11 +28,13 @@ if buffer_file is not None:
 
     # Show Image
     st.image(img_data, caption='Uploaded Image', use_column_width=True)
-
+    print(img_data.size)
+    print(img_data.size*0.1)
     km = MiniBatchKMeans(
         n_clusters=cluster_parameters, 
         max_iter=500, 
-        batch_size=img_data.size*0.1,
+        batch_size=1536,
+        tol=0.01 
     ).fit((img_data/255.0).reshape(-1, 3))
 
     st.write("Received Image. Generating Compressed Image")
