@@ -19,7 +19,7 @@ class plot_utils:
         colors = self.colors[index]
         R, G, B = self.img_data[index].T
 
-        print(colors)
+        print('colours:', colors)
 
         fig, ax = plt.subplots(1, 2, figsize=(15, 9), tight_layout=True)
         ax[0].scatter(R, G, color=colors, marker='.')
