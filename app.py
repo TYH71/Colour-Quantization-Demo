@@ -62,6 +62,8 @@ if buffer_file is not None:
 
     # Colour Space as a Scatterplot
     colourspace = st.expander('Colour Space')
+
+    colourspace.info('Colour Space: A plane containing all the possible colours that can be produced by mixing the three colour channels.')
     x = plot_utils(img_preprocess, title="Original Image Colour Space")
     colourspace.pyplot(x.colorSpace())
 
