@@ -43,3 +43,6 @@ if buffer_file is not None:
 
     # Show Quantized Image
     st.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
+
+else:
+    st.write("No Image Uploaded")
