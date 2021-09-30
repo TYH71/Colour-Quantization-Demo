@@ -33,8 +33,10 @@ if buffer_file is not None:
     img = Image.open(buffer_file)
     img_data = np.asarray(img)
 
+    col1, col2 = st.columns(2)
+
     # Show Image
-    st.image(img_data, caption='Uploaded Image', use_column_width=True)
+    col1.image(img_data, caption='Uploaded Image', use_column_width=True)
 
     # Generating Image
     km = predict(img_data)
@@ -44,7 +46,7 @@ if buffer_file is not None:
     k_img = img_as_ubyte(np.reshape(k_colors,(img_data.shape)))
 
     # Show Quantized Image
-    st.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
+    col2.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
 
 else:
     st.markdown(">No Image Uploaded")
