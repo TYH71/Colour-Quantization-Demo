@@ -65,7 +65,7 @@ if buffer_file is not None:
     x = plot_utils(img_preprocess, title="Original Image Colour Space")
     colourspace.pyplot(x.colorSpace())
 
-    y = plot_utils(img_preprocess, colors=k_colors, title="Reduced color space: 4 colours", 
+    y = plot_utils(img_preprocess, colors=k_colors, title=f"Reduced color space: {cluster_parameters} colours", 
     centroids=km.cluster_centers_)
     colourspace.pyplot(y.colorSpace())
 
