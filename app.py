@@ -49,8 +49,8 @@ if buffer_file is not None:
     # Show Quantized Image
     col2.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
 
-    colourspace = st.expander('Dependencies')
-    colourspace = st.image(plot_utils(img_data).colorSpace, caption='Colour Space', use_column_width=True)
+    colourspace = st.expander('Colourspace')
+    colourspace = st.image(plot_utils(img_data, title='Colourspace').colorSpace, caption='Colour Space', use_column_width=True)
 
 else:
     st.markdown(">No Image Uploaded")
