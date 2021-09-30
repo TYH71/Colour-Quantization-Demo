@@ -52,7 +52,7 @@ if buffer_file is not None:
 
     colourspace = st.expander('Colourspace')
     x = plot_utils(img_data, title=None)
-    colourspace.image(x.colourSpace(), caption='Colour Space', use_column_width=True)
+    colourspace.image(x.colorSpace(), caption='Colour Space', use_column_width=True)
 
 else:
     st.markdown(">No Image Uploaded")
