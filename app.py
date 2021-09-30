@@ -4,7 +4,6 @@ from skimage import io, color, img_as_ubyte
 from PIL import Image
 from sklearn.cluster import MiniBatchKMeans
 
-@st.cache  # 👈 Added this
 # Header
 st.title("Colour Quantization")
 st.info(
