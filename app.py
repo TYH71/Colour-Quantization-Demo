@@ -3,7 +3,7 @@ import numpy as np
 from skimage import io, color, img_as_ubyte
 from PIL import Image
 from sklearn.cluster import MiniBatchKMeans
-import assets.plot_utils
+from assets import plot_utils
 
 # Header
 st.title("Colour Quantization")
