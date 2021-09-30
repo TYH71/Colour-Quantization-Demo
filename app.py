@@ -42,4 +42,4 @@ if buffer_file is not None:
     k_img = img_as_ubyte(np.reshape(k_colors,(img_data.shape)))
 
     # Show Quantized Image
-    st.image(k_img, caption=f'Compressed Colour ({} Distinct Colours)'.format(cluster_parameters), use_column_width=True)
+    st.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
