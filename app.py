@@ -65,5 +65,9 @@ if buffer_file is not None:
     x = plot_utils(img_preprocess, title="Original Image Colour Space")
     colourspace.pyplot(x.colorSpace())
 
+    y = plot_utils(img_preprocess, colors=k_colors, title="Reduced color space: 4 colours", 
+    centroids=km.cluster_centers_)
+    y.colorSpace()
+
 else:
     st.markdown(">No Image Uploaded")
