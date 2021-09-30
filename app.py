@@ -3,7 +3,7 @@ import numpy as np
 from skimage import io, color, img_as_ubyte
 from PIL import Image
 from sklearn.cluster import MiniBatchKMeans
-from assets import plot_utils
+import assets.plot_utils
 
 # Header
 st.title("Colour Quantization")
@@ -48,6 +48,7 @@ if buffer_file is not None:
 
     # Show Quantized Image
     col2.image(k_img, caption=f'Compressed Colour ({cluster_parameters} Distinct Colours)', use_column_width=True)
+
 
     colourspace = st.expander('Colourspace')
     colourspace = st.image(plot_utils(img_data, title=None).colorSpace(), caption='Colour Space', use_column_width=True)
