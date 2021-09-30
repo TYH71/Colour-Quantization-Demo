@@ -27,8 +27,9 @@ if buffer_file is not None:
 
     # Show Image
     st.image(img_data, caption='Uploaded Image', use_column_width=True)
-    print(img_data.size)
-    print(img_data.size*0.1)
+
+    # Generating Image
+    st.write("Received Image. Generating Compressed Image")
     km = MiniBatchKMeans(
         n_clusters=cluster_parameters, 
         max_iter=500, 
@@ -36,9 +37,9 @@ if buffer_file is not None:
         tol=0.01 
     ).fit((img_data/255.0).reshape(-1, 3))
 
-    st.write("Received Image. Generating Compressed Image")
-
+    # Generating Quantized Image
     k_colors = km.cluster_centers_[km.labels_]
     k_img = img_as_ubyte(np.reshape(k_colors,(img_data.shape)))
 
-    st.image(k_img, caption='Compressed Colour', use_column_width=True)
+    # Show Quantized Image
+    st.image(k_img, caption=f'Compressed Colour ({} Distinct Colours)'.format(cluster_parameters), use_column_width=True)
