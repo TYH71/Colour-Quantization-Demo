@@ -54,3 +54,5 @@ class plot_utils:
         ax.set_ylabel('Green')
         ax.set_zlabel('Blue')
         fig.suptitle(self.title, size=28)
+
+        return fig
