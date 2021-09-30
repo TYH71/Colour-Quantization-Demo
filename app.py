@@ -13,7 +13,7 @@ Conduct Colour-Based Segmentation of an Image based on the chromaticity plane le
 
 # sidebar
 st.sidebar.title("Colour Quantization")
-cluster_parameters = st.sidebar.slider('Number of Clusters', 4, 256, 10)
+cluster_parameters = st.sidebar.slider('Number of Clusters', 4, 256, 64)
 
 
 # Buffer File Upload
