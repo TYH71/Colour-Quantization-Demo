@@ -36,7 +36,6 @@ if buffer_file is not None:
     # Show Image
     st.image(img_data, caption='Uploaded Image', use_column_width=True)
 
-    st.progress()
     # Generating Image
     st.write("Received Image. Generating Compressed Image")
     km = predict(img_data)
