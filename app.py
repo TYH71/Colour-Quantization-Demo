@@ -31,7 +31,7 @@ if buffer_file is not None:
     km = MiniBatchKMeans(
         n_clusters=cluster_parameters, 
         max_iter=500, 
-        batch_size=3072
+        batch_size=img_data.size*0.1,
     ).fit((img_data/255.0).reshape(-1, 3))
 
     st.write("Received Image. Generating Compressed Image")
