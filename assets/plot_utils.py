@@ -35,7 +35,7 @@ class plot_utils:
             for i, c in enumerate(self.centroids):
                 ax[1].scatter(c[0], c[2], marker='$%d$' % i, s=100, edgecolor='k')
 
-        return fig
+        return(fig)
 
     def colorSpace3d(self):
         if self.colors is None:
