@@ -16,9 +16,17 @@ st.sidebar.title("Colour Quantization")
 st.sidebar.info("Control the number of distinct colours for Quantization.")
 cluster_parameters = st.sidebar.slider('Number of Clusters', 4, 256, 64)
 
-
 # Buffer File Upload
 buffer_file = st.sidebar.file_uploader('Choose a File', type=['jpg', 'png', 'jpeg'], accept_multiple_files=False)
+
+@st.cache
+def predict(img_data):
+    return MiniBatchKMeans(
+        n_clusters=cluster_parameters, 
+        max_iter=500, 
+        batch_size=1536,
+        tol=0.01 
+    ).fit((img_data/255.0).reshape(-1, 3)) 
 
 # Checking State of File Upload
 if buffer_file is not None:
@@ -30,12 +38,7 @@ if buffer_file is not None:
 
     # Generating Image
     st.write("Received Image. Generating Compressed Image")
-    km = MiniBatchKMeans(
-        n_clusters=cluster_parameters, 
-        max_iter=500, 
-        batch_size=1536,
-        tol=0.01 
-    ).fit((img_data/255.0).reshape(-1, 3))
+    km = predict(img_data)
 
     # Generating Quantized Image
     k_colors = km.cluster_centers_[km.labels_]
