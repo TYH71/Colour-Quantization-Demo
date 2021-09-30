@@ -38,6 +38,7 @@ if buffer_file is not None:
     # Show Image
     col1.image(img_data, caption='Uploaded Image', use_column_width=True)
 
+    
     # Generating Image
     km = predict(img_data)
 
