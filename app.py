@@ -18,7 +18,7 @@ cluster_parameters = st.sidebar.slider('Number of Clusters', 4, 256, 64)
 
 
 # Buffer File Upload
-buffer_file = st.file_uploader('Choose a File', type=['jpg', 'png', 'jpeg'], accept_multiple_files=False)
+buffer_file = st.sidebar.file_uploader('Choose a File', type=['jpg', 'png', 'jpeg'], accept_multiple_files=False)
 
 # Checking State of File Upload
 if buffer_file is not None:
