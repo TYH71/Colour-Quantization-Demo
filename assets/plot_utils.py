@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class plot_utils:
     def __init__(self, img_data, title, num_pixels=10000, colors=None, centroids=None):
         self.img_data = img_data
@@ -35,7 +36,7 @@ class plot_utils:
             for i, c in enumerate(self.centroids):
                 ax[1].scatter(c[0], c[2], marker='$%d$' % i, s=100, edgecolor='k')
 
-        return(fig)
+        return fig
 
     def colorSpace3d(self):
         if self.colors is None:
